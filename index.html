@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- UIkit CSS -->
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/css/uikit.min.css"
+		/>
+
+		<link rel="stylesheet" href="assets/css/main.css" />
+
+		<!-- CSS -->
+		<link
+			rel="stylesheet"
+			href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"
+		/>
+		<!-- Semantic UI theme -->
+		<link
+			rel="stylesheet"
+			href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css"
+		/>
+
+		<title>Document</title>
+	</head>
+	<body>
+		<nav class="uk-navbar-container" uk-navbar>
+			<div class="uk-navbar-left">
+				<ul class="uk-navbar-nav">
+					<li class="uk-active">
+						<a href="#">Todos los productos</a>
+					</li>
+					<li>
+						<a href="/views/addProducto.html">Agregar producto nuevo</a>
+					</li>
+					<li>
+						<a href="#">Actualizar producto</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<section class="uk-padding-large">
+			<p uk-margin>
+				<!-- This is a button toggling the modal -->
+				<button
+					class="uk-button uk-button-primary"
+					type="button"
+					uk-toggle="target: #modal-example"
+					id="agregarProducto"
+					>Agregar nuevo producto</button
+				>
+			</p>
+			<table class="uk-table uk-table-justify uk-table-divider">
+				<thead>
+					<tr>
+						<th class="uk-width-small" style="visibility: hidden">id</th>
+						<th class="uk-width-small">Description</th>
+						<th id="table-price">Price</th>
+						<th id="table-stock" class="uk-width-3-4">Stock</th>
+						<th id="table-acciones">Acciones</th>
+					</tr>
+				</thead>
+				<tbody id="tablaPadre"> </tbody>
+			</table>
+		</section>
+
+		<!-- This is the modal -->
+		<div id="modal-example" uk-modal>
+			<div class="uk-modal-dialog uk-modal-body">
+				<h2 class="uk-modal-title" id="modal__header">Headline</h2>
+				<form class="uk-form-stacked">
+					<div class="uk-margin">
+						<label class="uk-form-label" for="form-stacked-text">Description</label>
+						<div class="uk-form-controls">
+							<input class="uk-input" id="form-description-text" type="text" />
+						</div>
+					</div>
+					<div class="uk-margin">
+						<label class="uk-form-label" for="form-stacked-text">Price</label>
+						<div class="uk-form-controls">
+							<input class="uk-input" id="form-price-text" type="number" />
+						</div>
+					</div>
+					<div class="uk-margin">
+						<label class="uk-form-label" for="form-stacked-text">Stock</label>
+						<div class="uk-form-controls">
+							<input class="uk-input" id="form-stock-text" type="number" />
+						</div>
+					</div>
+				</form>
+				<p class="uk-text-right">
+					<button class="uk-button uk-button-default uk-modal-close" type="button"
+						>Cancel</button
+					>
+					<button class="uk-button uk-button-primary" id="btn-guardar-producto"
+						>Save</button
+					>
+				</p>
+			</div>
+		</div>
+		<!-- UIkit JS -->
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/uikit@3.14.1/dist/js/uikit-icons.min.js"></script>
+		<!-- JavaScript -->
+		<script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+		<!-- MainJs -->
+		<script type="module" src="assets/js/main.js"></script>
+	</body>
+</html>
